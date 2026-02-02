@@ -111,13 +111,13 @@ python train.py -h
 4.1 Train on Synapse
 
 ```bash
-python train.py   --dataset Synapse   --img_size 224   --max_epoch 1000   --batch_size 6   --base_lr 0.05   --list_dir ./lists   --output_dir ./outputs/synapse
+python train.py --dataset Synapse --output_dir './model_output_Synapse' --max_epochs 600 --batch_size 12
 ```
 
 4.2 Train on ACDC
 
 ```bash
-python train.py   --dataset ACDC   --img_size 224   --max_epoch 2000   --batch_size 6   --base_lr 0.05   --list_dir ./lists   --output_dir ./outputs/acdc
+python train.py --dataset Synapse --output_dir './model_output_ACDC' --max_epochs 1000 --batch_size 12
 ```
 
 If your code requires an explicit dataset root path, add it to the command using the exact flag name in your scripts (for example --root_path or --data_root):
@@ -130,15 +130,13 @@ python train.py ... --root_path <DATA_ROOT>/Synapse
 
 ## 5. Testing / Inference
 
-Run the following to check available arguments:
-```bash
-python test.py -h
-```
-
 Example:
 
 ```bash
-python test.py   --dataset Synapse   --img_size 224   --list_dir ./lists   --output_dir ./outputs/synapse   --test_save_dir ./outputs/synapse/predictions
+python test.py --dataset Synapse --is_saveni True --output_dir './model_output_Synapse' --max_epoch 600 --batch_size 12 --test_save_dir './model_output_Synapse/predictions'
+```
+```bash
+python test.py --dataset ACDC --is_saveni True --output_dir './model_output_ACDC' --max_epoch 1000 --batch_size 12 --test_save_dir './model_output_ACDC/predictions'
 ```
 
 Outputs:
@@ -155,31 +153,5 @@ If you want to save predictions for qualitative comparison:
 If you need PNG overlays or NIfTI exports, add a small utility script to convert saved predictions, or use an existing script in the repository if available.
 
 
-## 7. Troubleshooting
-
-7.1 mamba-ssm / causal-conv1d installation issues
-- ensure your CUDA runtime matches the PyTorch version
-- in cluster/AutoDL environments, prefer installing wheels that match the CUDA runtime
-
-7.2 Out of memory
-- reduce batch_size
-- reduce img_size (only if you are not strictly reproducing the paper setting)
-- enable mixed precision if your scripts support it
-
-7.3 Determinism
-- ensure the seed flag (or deterministic option) is enabled in your script
-- full determinism can slightly reduce speed
 
 
-## 8. Citation
-
-If you use this code, please cite our paper:
-
-```bibtex
-@article{mssa_net,
-  title={...},
-  author={...},
-  journal={...},
-  year={...}
-}
-```
