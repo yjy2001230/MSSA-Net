@@ -1,0 +1,24 @@
+pip install torch==1.13.1 torchvision==0.14.1 torchaudio==0.13.0 --extra-index-url https://download.pytorch.org/whl/cu117
+pip install packaging
+pip install timm==0.4.12
+pip install pytest chardet yacs termcolor
+pip install submitit tensorboardX
+pip install triton==2.0.0
+pip install causal_conv1d==1.0.0  # causal_conv1d-1.0.0+cu118torch1.13cxx11abiFALSE-cp38-cp38-linux_x86_64.whl
+pip install mamba_ssm==1.0.1  # mmamba_ssm-1.0.1+cu118torch1.13cxx11abiFALSE-cp38-cp38-linux_x86_64.whl
+pip install scikit-learn matplotlib thop h5py SimpleITK scikit-image medpy yacs
+ml-collections
+medpy~=0.4.0
+SimpleITK~=2.0.2
+scipy~=1.7.3
+h5py~=3.7.0
+einops~=0.6.1
+nibabel~=4.0.2
+matplotlib~=3.2.2
+PyYAML~=6.0.1
+yacs~=0.1.8
+opencv-python~=4.9.0.80
+scikit-image~=0.19.3
+imgaug~=0.4.0
+
+
