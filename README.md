@@ -1,12 +1,10 @@
-# MSSA-Net
+# MDSF-Net
 
-Official PyTorch implementation of our paper for medical image segmentation.
+PyTorch implementation of MSSA-Net for medical image segmentation.
 
-This repository provides:
-- end-to-end training and evaluation scripts
-- dataset preparation convention (Synapse / ACDC)
-- reproducible hyper-parameters and command examples
-- optional prediction saving for qualitative visualization
+This repository contains training and evaluation code for two public benchmarks:
+Synapse (multi-organ CT) and ACDC (cardiac MRI). The scripts follow a slice-wise
+2D training/evaluation protocol (224×224).
 
 
 ## 1. Environment
@@ -16,8 +14,8 @@ All Python dependencies are listed in requirements.txt.
 Recommended setup:
 
 ```bash
-conda create -n mssa python=3.8 -y
-conda activate mssa
+conda create -n mdsf python=3.8 -y
+conda activate mdsf
 pip install -r requirements.txt
 ```
 
