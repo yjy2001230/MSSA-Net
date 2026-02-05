@@ -82,21 +82,6 @@ If your scripts use list files:
 - put split files under ./lists
 - set --list_dir ./lists when running train/test
 
-2.3 Data protocol (paper setting)
-
-To keep the evaluation consistent and reproducible:
-- 3D volumes are sliced into 2D axial slices
-- all slices are resized to 224x224 for both training and testing
-- intensity normalization is applied
-- data augmentations include random flipping, affine transforms (scale/rotate/translate/shear), and additive Gaussian noise
-
-Synapse split:
-- 18 volumes for training, 12 volumes for testing
-
-ACDC split:
-- 70 cases for training, 10 for validation, 20 for testing
-- training and evaluation are performed at the 2D slice level
-
 
 ## 3. Reproducibility settings
 
