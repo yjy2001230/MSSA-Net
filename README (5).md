@@ -99,12 +99,12 @@ python train.py --dataset ACDC --output_dir ./model_output_ACDC --max_epochs 100
 
 ### 6.1 Synapse
 ```bash
-python test.py --dataset Synapse --is_saveni True --output_dir ./model_output_Synapse --max_epoch 600 --batch_size 12 --test_save_dir ./model_output_Synapse/predictions
+python test.py --dataset Synapse --is_saveni True --output_dir ./model_output_Synapse --max_epoch 1000 --batch_size 12 --test_save_dir ./model_output_Synapse/predictions
 ```
 
 ### 6.2 ACDC
 ```bash
-python test.py --dataset ACDC --is_saveni True --output_dir ./model_output_ACDC --max_epoch 1000 --batch_size 12 --test_save_dir ./model_output_ACDC/predictions
+python test.py --dataset ACDC --is_saveni True --output_dir ./model_output_ACDC --max_epoch 2000 --batch_size 12 --test_save_dir ./model_output_ACDC/predictions
 ```
 
 ## 7. Outputs
